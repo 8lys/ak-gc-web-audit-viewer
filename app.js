@@ -9,6 +9,7 @@
     scored: null,
     top10: null,
     builders: null,
+    aiScores: null,
     context: null,
     browse: { q: "", category: "", status: "", web: "", sortKey: "business_name", sortDir: 1, page: 1 },
     could: { q: "", status: "", sortKey: "business_name", sortDir: 1, page: 1 },
@@ -46,6 +47,19 @@
     return `<a class="url" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(u)}</a>`;
   }
 
+
+
+  function aiScoreCell(license) {
+    const a = (state.aiScores && state.aiScores.rows && state.aiScores.rows[license]) || null;
+    if (!a || a.ai_likelihood == null) {
+      return '<div class="ai-score muted">AI-built likelihood: n/a</div>';
+    }
+    const n = Number(a.ai_likelihood);
+    const band = esc(a.band || '');
+    const conf = esc(a.confidence || '');
+    const tip = esc(a.rationale || '');
+    return `<div class="ai-score band-${band}" title="${tip}"><span class="ai-label">AI-built likelihood</span> <strong>${n}</strong><span class="ai-band">/100 · ${band}</span>${conf ? `<span class="ai-conf"> · conf ${conf}</span>` : ''}</div>`;
+  }
 
   function builderCell(license) {
     const b = (state.builders && state.builders.rows && state.builders.rows[license]) || null;
@@ -406,6 +420,11 @@
             .join(" · ")
         : "No public studio credits found on Top10 peers.";
     }
+    const aiSum = $("#top10-ai-summary");
+    if (aiSum && state.aiScores && state.aiScores.summary) {
+      const s = state.aiScores.summary;
+      aiSum.textContent = `AI-built likelihood (estimate): high ${s.high_count || 0} · mid ${s.mid_count || 0} · low ${s.low_count || 0}. Hover a score for rationale.`;
+    }
 
     const rows = (state.top10.rows || []).slice().sort((a, b) => Number(a.rank) - Number(b.rank));
     $("#top10-grid").innerHTML = rows
@@ -427,6 +446,7 @@
           <h3>${esc(r.business_name)}</h3>
           <div class="meta-line">${esc(r.city || "—")} · ${esc(r.license_number)} · ${urlCell(r.website_url)}</div>
           ${builderCell(r.license_number)}
+          ${aiScoreCell(r.license_number)}
           <div class="tags">
             <span class="tag">${esc(r.primary_reason_code || "—")}</span>
             ${secondary}${newTag}${stage3}
@@ -476,15 +496,17 @@
   async function boot() {
     const bootEl = $("#boot");
     try {
-      const [scored, top10, builders, context] = await Promise.all([
+      const [scored, top10, builders, aiScores, context] = await Promise.all([
         loadJson("./data/scored.json"),
         loadJson("./data/top10.json"),
         loadJson("./data/site-builders.json"),
+        loadJson("./data/ai-built-likelihood.json"),
         loadJson("./data/context.json"),
       ]);
       state.scored = scored;
       state.top10 = top10;
       state.builders = builders;
+      state.aiScores = aiScores;
       state.context = context;
 
       renderOverview();

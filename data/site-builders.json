@@ -9,7 +9,7 @@
     "exact_name": "XaDa Studio",
     "exact_url": "https://xadastudio.com",
     "on_site": "Golden Hammer LLC (244839)",
-    "note": "User guessed 'XADA Studio' transcription — verified exact footer branding is XaDa Studio."
+    "note": "User guessed 'XADA Studio' transcription \u2014 verified exact footer branding is XaDa Studio."
   },
   "zeta_finding": {
     "found_on_top10": false,
@@ -100,10 +100,10 @@
       "license_number": "CONG20310",
       "business_name": "SPINELL HOMES INC",
       "website_url": "https://www.spinellhomes.com/",
-      "builder_name": "128 Media",
-      "builder_url": "https://www.128media.com",
+      "builder_name": "Fix8 Media",
+      "builder_url": "https://fix8media.com",
       "evidence_url": "https://www.spinellhomes.com/",
-      "evidence_note": "Footer \"Site By\" block links to https://www.128media.com (logo SVG, no on-page text name). Linked site brands as \"128 Media\".",
+      "evidence_note": "Live footer Site By credit links to Fix8 Media (fix8media.com). Prior 128 Media attribution corrected as likely logo/widget misread.",
       "confidence": "high"
     },
     "CONE39417": {
@@ -116,5 +116,11 @@
       "evidence_note": "Homepage/about-us checked; copyright \"Carpet One Floor & Home\" only. No public third-party design/development credit found. Franchise platform not attributed as builder.",
       "confidence": null
     }
+  },
+  "spinell_credit_correction": {
+    "from": "128 Media",
+    "to": "Fix8 Media",
+    "url": "https://fix8media.com",
+    "reason": "Live Spinell footer Site By href verified Fix8 Media; prior 128 Media was a misread."
   }
 }

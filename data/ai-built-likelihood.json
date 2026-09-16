@@ -1,0 +1,258 @@
+{
+  "source_csv": "/workspace/rainmaker/ak-gc/top10/top10.csv",
+  "site_builders_source": "/workspace/rainmaker/ak-gc/top10/site-builders.json",
+  "researched_at": "2026-09-15 22:29 AKDT",
+  "method": "Public homepage HTML fetch + on-page credit/generator/CDN fingerprint scan; agency destination pages checked when credited. No invented credits. WordPress/Elementor alone not scored as AI-built. Score = likelihood of AI website builders / heavy AI-assisted design-dev / heavily AI-generated content+layout.",
+  "band_legend": {
+    "low": "0-33",
+    "mid": "34-66",
+    "high": "67-100"
+  },
+  "summary": {
+    "high_count": 0,
+    "mid_count": 2,
+    "low_count": 8,
+    "explicit_ai_builder_fingerprints_found": 0,
+    "note": "No Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI generator fingerprints observed on any Top10 peer."
+  },
+  "attributed_studios": [
+    {
+      "studio": "XaDa Studio",
+      "url": "https://xadastudio.com",
+      "license_number": "244839",
+      "business_name": "Golden Hammer LLC",
+      "ai_likelihood_of_client_site": 22,
+      "notes": "Footer credits Website design & development / Built & maintained by XaDa Studio. Studio site lists custom design/dev plus separate AI-Powered Product Development; Golden Hammer itself is custom Next.js with local project photos, not an AI-builder shell."
+    },
+    {
+      "studio": "COTW (Connor on the Web)",
+      "url": "https://connorontheweb.com",
+      "license_number": "207798",
+      "business_name": "Bigfoot Decking & Services",
+      "ai_likelihood_of_client_site": 15,
+      "notes": "Footer Apps and websites by COTW → connorontheweb.com. Developer portfolio/custom-app positioning; no AI website-builder product marketing observed."
+    },
+    {
+      "studio": "Scorpion",
+      "url": "https://www.scorpion.co/",
+      "license_number": "150073",
+      "business_name": "ALL AMERICAN HOME SERVICE, LLC",
+      "ai_likelihood_of_client_site": 25,
+      "notes": "ScorpionFooterS3 / scorpion.co wordmark. Agency marketing platform with formulaic local-service layout; Scorpion markets AI for ads/chat/lead scoring, not as an AI website-builder product for this site."
+    },
+    {
+      "studio": "Galloway Designs",
+      "url": "https://gallowaydesigns.us/",
+      "license_number": "CONS40449",
+      "business_name": "ARCTIC VALLEY CONSTRUCTION",
+      "ai_likelihood_of_client_site": 40,
+      "notes": "Footer Powered by Galloway Designs. Destination is an Alaska architectural design/drafting firm (not an AI site factory). Client homepage is thin (~1.5k visible chars) with generic homebuilder cadence — mid uncertainty on AI-assisted copy."
+    },
+    {
+      "studio": "Fix8 Media",
+      "url": "https://www.fix8media.com",
+      "license_number": "CONG20310",
+      "business_name": "SPINELL HOMES INC",
+      "ai_likelihood_of_client_site": 12,
+      "notes": "Live footer Site By widget href is https://www.fix8media.com (Duda Solutions Partner / custom Duda agency). site-builders.json listed 128 Media — that appears to be a misread of Fix8; public evidence is Fix8 Media. No AI-builder marketing observed on Fix8."
+    }
+  ],
+  "shared_design_system_observation": {
+    "sites": ["182727", "CONE40385"],
+    "signal": "Both Astro sites share the H2 phrase Proof, not promises and similar editorial section patterns; no public studio credit on either. Treated as likely same human design system, not an AI factory fingerprint."
+  },
+  "rows": {
+    "182727": {
+      "license_number": "182727",
+      "business_name": "Deck Masters, LLC",
+      "website_url": "https://deckmastersak.com",
+      "ai_likelihood": 18,
+      "band": "low",
+      "rationale": "Custom Astro stack with Anchorage-specific deck copy and project imagery; no AI-builder generator fingerprint. Shares Proof, not promises editorial pattern with Custom Carpentry, consistent with a human design system rather than Durable/Lovable-class output.",
+      "signals": [
+        "astro custom build (_astro assets)",
+        "no AI-builder meta/generator fingerprint",
+        "local project gallery density",
+        "Alaska-specific service copy",
+        "shared Proof, not promises pattern with CONE40385",
+        "no public agency credit"
+      ],
+      "confidence": "medium",
+      "attributed_builder": null
+    },
+    "243187": {
+      "license_number": "243187",
+      "business_name": "Husband For An Hour Handyman Pro",
+      "website_url": "https://www.husbandforhour.com/",
+      "ai_likelihood": 8,
+      "band": "low",
+      "rationale": "Highly idiosyncratic brand voice (backup husband / honey-do / viral van) with custom photography and non-generic section writing. Looks hand-crafted marketing, not AI-builder or AI-slop layout.",
+      "signals": [
+        "distinctive brand voice unlikely from AI factory templates",
+        "custom team/van/mascot imagery with specific alts",
+        "no AI-builder fingerprint",
+        "no public agency credit",
+        "original FAQ/CTA phrasing"
+      ],
+      "confidence": "high",
+      "attributed_builder": null
+    },
+    "244839": {
+      "license_number": "244839",
+      "business_name": "Golden Hammer LLC",
+      "website_url": "https://www.goldenhammeralaska.com/",
+      "ai_likelihood": 22,
+      "band": "low",
+      "rationale": "Explicitly Built & maintained by XaDa Studio on a custom Next.js site with owner/project photos and Fairbanks-specific copy. XaDa markets AI-powered product work separately, but this peer site reads as studio-built, not an AI website-builder export.",
+      "signals": [
+        "footer credit XaDa Studio (high confidence)",
+        "Next.js /_next image pipeline",
+        "local before/after and owner photography",
+        "Alaska climate-specific messaging",
+        "XaDa lists AI-Powered Product Development (raises mild assist uncertainty only)",
+        "no Lovable/Durable/etc fingerprint"
+      ],
+      "confidence": "high",
+      "attributed_builder": {
+        "name": "XaDa Studio",
+        "url": "https://xadastudio.com"
+      }
+    },
+    "207798": {
+      "license_number": "207798",
+      "business_name": "Bigfoot Decking & Services",
+      "website_url": "https://bigfootbuildersak.com",
+      "ai_likelihood": 15,
+      "band": "low",
+      "rationale": "Footer credits Apps and websites by COTW (Connor on the Web). Custom deck site with interactive Trex visualizer and local service framing — developer-built, not AI-builder.",
+      "signals": [
+        "footer credit COTW → connorontheweb.com",
+        "custom Trex color visualizer feature",
+        "no AI-builder fingerprint",
+        "some generic marketing phrases (dream decks / transform)",
+        "COTW positions as full-stack human developer"
+      ],
+      "confidence": "high",
+      "attributed_builder": {
+        "name": "COTW",
+        "url": "https://connorontheweb.com"
+      }
+    },
+    "120211": {
+      "license_number": "120211",
+      "business_name": "MKD's Property Solutions, LLC",
+      "website_url": "https://mkdspropertysolutions.com",
+      "ai_likelihood": 48,
+      "band": "mid",
+      "rationale": "WordPress + Elementor with homogeneous local-SEO copy cadence and repetitive Anchorage contractor image alts; feels template + AI-or-SEO-assisted content, but no explicit AI-builder fingerprint — WP/Elementor alone is not scored as AI-built.",
+      "signals": [
+        "generator: WordPress + Elementor (not treated as AI by itself)",
+        "homogeneous SEO H1/H2 cadence (Reliable General Contractor in Anchorage)",
+        "repetitive SEO image alts",
+        "standard Elementor services/testimonial/CTA stack",
+        "no public agency credit",
+        "no Lovable/Durable/10Web/Hostinger AI fingerprint"
+      ],
+      "confidence": "medium",
+      "attributed_builder": null
+    },
+    "150073": {
+      "license_number": "150073",
+      "business_name": "ALL AMERICAN HOME SERVICE, LLC",
+      "website_url": "https://www.allamericanph.com/",
+      "ai_likelihood": 25,
+      "band": "low",
+      "rationale": "Clear Scorpion marketing-platform footer/credit. Formulaic local plumbing/heating agency template, not an AI website builder; Scorpion’s AI claims observed are ads/chat/scoring, not site generation.",
+      "signals": [
+        "ScorpionFooterS3 / scorpion.co wordmark",
+        "analytics.scorpion.co",
+        "agency template sameness (human agency factory)",
+        "Scorpion markets AI ads/chat/lead tools (not AI site builder for this page)",
+        "no Lovable/Durable fingerprint"
+      ],
+      "confidence": "high",
+      "attributed_builder": {
+        "name": "Scorpion",
+        "url": "https://www.scorpion.co/"
+      }
+    },
+    "CONE40385": {
+      "license_number": "CONE40385",
+      "business_name": "CUSTOM CARPENTRY",
+      "website_url": "https://customcarpentryak.com",
+      "ai_likelihood": 20,
+      "band": "low",
+      "rationale": "Astro editorial site with Eagle River doors/windows/kitchen proof photos and the same Proof, not promises section label as Deck Masters. Reads as shared human design system, not AI-builder output.",
+      "signals": [
+        "astro custom build",
+        "shared Proof, not promises with Deck Masters",
+        "local install/remodel photo set",
+        "no AI-builder fingerprint",
+        "no public agency credit",
+        "concise non-slop service copy"
+      ],
+      "confidence": "medium",
+      "attributed_builder": null
+    },
+    "CONS40449": {
+      "license_number": "CONS40449",
+      "business_name": "ARCTIC VALLEY CONSTRUCTION",
+      "website_url": "https://www.arcticvalleyconstruction.com/",
+      "ai_likelihood": 40,
+      "band": "mid",
+      "rationale": "Powered by Galloway Designs (Alaska architectural firm) lowers pure AI-factory odds, but the homepage is thin and uses generic inspirational homebuilder cadence — plausible light AI-assisted copy on a simple brochure layout.",
+      "signals": [
+        "footer Powered by Galloway Designs",
+        "thin visible homepage copy (~1.5k chars)",
+        "generic belong / trusted custom home builder phrasing",
+        "simple hero/about/projects/gallery section stack",
+        "Galloway destination is drafting/design firm, not AI website builder",
+        "no AI-builder fingerprint"
+      ],
+      "confidence": "medium",
+      "attributed_builder": {
+        "name": "Galloway Designs",
+        "url": "https://gallowaydesigns.us/"
+      }
+    },
+    "CONG20310": {
+      "license_number": "CONG20310",
+      "business_name": "SPINELL HOMES INC",
+      "website_url": "https://www.spinellhomes.com/",
+      "ai_likelihood": 12,
+      "band": "low",
+      "rationale": "Duda platform markers (cdn-website.com, dm* classes) plus live Site By link to Fix8 Media, a human Duda agency. Corporate Spinell brand content — agency/platform-built, not AI-builder.",
+      "signals": [
+        "Duda CDN/classes (irp.cdn-website.com, dmBody/dmRoot)",
+        "footer Site By → https://www.fix8media.com",
+        "Fix8 Media = Duda Solutions Partner (human agency)",
+        "brand-specific Get Spoiled by Spinell messaging",
+        "no AI-builder fingerprint",
+        "site-builders.json 128 Media label conflicts with live fix8media.com href"
+      ],
+      "confidence": "high",
+      "attributed_builder": {
+        "name": "Fix8 Media",
+        "url": "https://www.fix8media.com",
+        "note": "Live public credit; differs from site-builders.json 128 Media"
+      }
+    },
+    "CONE39417": {
+      "license_number": "CONE39417",
+      "business_name": "FLORCRAFT CARPET ONE",
+      "website_url": "http://www.florcraftcarpetone.com/",
+      "ai_likelihood": 10,
+      "band": "low",
+      "rationale": "Carpet One Floor & Home franchise storefront paths (/root/client/CPTONE9999/) and corporate franchise UI patterns. Franchise CMS template, not AI-built.",
+      "signals": [
+        "Carpet One franchise client asset paths (CPTONE9999)",
+        "copyright Carpet One Floor & Home framing",
+        "corporate franchise section patterns (HERE TO WOW YOU)",
+        "no third-party design credit",
+        "no AI-builder fingerprint"
+      ],
+      "confidence": "high",
+      "attributed_builder": null
+    }
+  }
+}

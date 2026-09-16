@@ -679,3 +679,26 @@ table.data a.url {
 .builders-summary a {
   color: var(--accent, #7eb6ff);
 }
+
+.ai-score {
+  margin: 0.25rem 0 0.65rem;
+  font-size: 0.88rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.4rem;
+  align-items: baseline;
+}
+.ai-score .ai-label {
+  opacity: 0.75;
+}
+.ai-score strong {
+  font-variant-numeric: tabular-nums;
+  font-size: 1.05rem;
+}
+.ai-score.band-low strong { color: #7dcea0; }
+.ai-score.band-mid strong { color: #f0c674; }
+.ai-score.band-high strong { color: #e07a5f; }
+.ai-band, .ai-conf {
+  opacity: 0.75;
+  font-size: 0.82rem;
+}
