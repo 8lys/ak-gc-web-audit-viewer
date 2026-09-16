@@ -1,0 +1,120 @@
+{
+  "source_csv": "/workspace/rainmaker/ak-gc/top10/top10.csv",
+  "researched_at": "2026-09-15 22:24 AKDT",
+  "method": "Public on-site footer/about/HTML credit links only; no visual-style inference. Platform/theme generators alone are not builders.",
+  "attributed_count": 5,
+  "null_count": 5,
+  "xada_finding": {
+    "found": true,
+    "exact_name": "XaDa Studio",
+    "exact_url": "https://xadastudio.com",
+    "on_site": "Golden Hammer LLC (244839)",
+    "note": "User guessed 'XADA Studio' transcription — verified exact footer branding is XaDa Studio."
+  },
+  "zeta_finding": {
+    "found_on_top10": false,
+    "note": "No Zeta / Zeta Studio string or credit on any Top10 peer site. Not assumed same as XaDa Studio."
+  },
+  "rows": {
+    "182727": {
+      "license_number": "182727",
+      "business_name": "Deck Masters, LLC",
+      "website_url": "https://deckmastersak.com",
+      "builder_name": null,
+      "builder_url": null,
+      "evidence_url": null,
+      "evidence_note": "Homepage and about pages checked; footer shows copyright/license only. No public design/development credit found.",
+      "confidence": null
+    },
+    "243187": {
+      "license_number": "243187",
+      "business_name": "Husband For An Hour Handyman Pro",
+      "website_url": "https://www.husbandforhour.com/",
+      "builder_name": null,
+      "builder_url": null,
+      "evidence_url": null,
+      "evidence_note": "Homepage and about.html checked; footer has business copyright only. lang-credit is Google Translate, not a builder. No public agency credit found.",
+      "confidence": null
+    },
+    "244839": {
+      "license_number": "244839",
+      "business_name": "Golden Hammer LLC",
+      "website_url": "https://www.goldenhammeralaska.com/",
+      "builder_name": "XaDa Studio",
+      "builder_url": "https://xadastudio.com",
+      "evidence_url": "https://www.goldenhammeralaska.com/",
+      "evidence_note": "Footer credit link: title=\"Website design & development by XaDa Studio\"; visible text \"Built & maintained by XaDa Studio\"; logo alt \"XaDa Studio\". Exact branding XaDa Studio (not XADA / not Zeta).",
+      "confidence": "high"
+    },
+    "207798": {
+      "license_number": "207798",
+      "business_name": "Bigfoot Decking & Services",
+      "website_url": "https://bigfootbuildersak.com",
+      "builder_name": "COTW",
+      "builder_url": "https://connorontheweb.com",
+      "evidence_url": "https://bigfootbuildersak.com",
+      "evidence_note": "Footer link to https://connorontheweb.com with text \"Apps and websites by COTW\"; img alt \"Connor on the web\". Destination site brands as Connor on the Web / ConnorOnTheWeb.",
+      "confidence": "high"
+    },
+    "120211": {
+      "license_number": "120211",
+      "business_name": "MKD's Property Solutions, LLC",
+      "website_url": "https://mkdspropertysolutions.com",
+      "builder_name": null,
+      "builder_url": null,
+      "evidence_url": null,
+      "evidence_note": "WordPress + Elementor generators present; no explicit agency/studio credit in footer or public pages. Platform alone is not attributed as builder.",
+      "confidence": null
+    },
+    "150073": {
+      "license_number": "150073",
+      "business_name": "ALL AMERICAN HOME SERVICE, LLC",
+      "website_url": "https://www.allamericanph.com/",
+      "builder_name": "Scorpion",
+      "builder_url": "https://www.scorpion.co/",
+      "evidence_url": "https://www.allamericanph.com/",
+      "evidence_note": "Footer section ScorpionFooterS3 includes logo wordmark link to https://www.scorpion.co/ (img data-src /common/scorpion/logo/wordmark-gray.png; title/alt \"Internet Marketing Experts\"). Destination og:site_name is Scorpion.",
+      "confidence": "high"
+    },
+    "CONE40385": {
+      "license_number": "CONE40385",
+      "business_name": "CUSTOM CARPENTRY",
+      "website_url": "https://customcarpentryak.com",
+      "builder_name": null,
+      "builder_url": null,
+      "evidence_url": null,
+      "evidence_note": "Homepage/about checked; footer copyright only. No public design/development credit found.",
+      "confidence": null
+    },
+    "CONS40449": {
+      "license_number": "CONS40449",
+      "business_name": "ARCTIC VALLEY CONSTRUCTION",
+      "website_url": "https://www.arcticvalleyconstruction.com/",
+      "builder_name": "Galloway Designs",
+      "builder_url": "https://gallowaydesigns.us/",
+      "evidence_url": "https://www.arcticvalleyconstruction.com/",
+      "evidence_note": "Footer: \"Powered by Galloway Designs\" linking to https://gallowaydesigns.us/ (class footer__credit-link). Exact branding Galloway Designs.",
+      "confidence": "high"
+    },
+    "CONG20310": {
+      "license_number": "CONG20310",
+      "business_name": "SPINELL HOMES INC",
+      "website_url": "https://www.spinellhomes.com/",
+      "builder_name": "128 Media",
+      "builder_url": "https://www.128media.com",
+      "evidence_url": "https://www.spinellhomes.com/",
+      "evidence_note": "Footer \"Site By\" block links to https://www.128media.com (logo SVG, no on-page text name). Linked site brands as \"128 Media\".",
+      "confidence": "high"
+    },
+    "CONE39417": {
+      "license_number": "CONE39417",
+      "business_name": "FLORCRAFT CARPET ONE",
+      "website_url": "http://www.florcraftcarpetone.com/",
+      "builder_name": null,
+      "builder_url": null,
+      "evidence_url": null,
+      "evidence_note": "Homepage/about-us checked; copyright \"Carpet One Floor & Home\" only. No public third-party design/development credit found. Franchise platform not attributed as builder.",
+      "confidence": null
+    }
+  }
+}

@@ -8,6 +8,7 @@
   const state = {
     scored: null,
     top10: null,
+    builders: null,
     context: null,
     browse: { q: "", category: "", status: "", web: "", sortKey: "business_name", sortDir: 1, page: 1 },
     could: { q: "", status: "", sortKey: "business_name", sortDir: 1, page: 1 },
@@ -43,6 +44,16 @@
     if (!u) return '<span class="muted">—</span>';
     const href = /^https?:\/\//i.test(u) ? u : "https://" + u;
     return `<a class="url" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(u)}</a>`;
+  }
+
+
+  function builderCell(license) {
+    const b = (state.builders && state.builders.rows && state.builders.rows[license]) || null;
+    if (!b || !b.builder_name || !b.builder_url) {
+      return '<div class="built-by muted">Built by: No public credit found</div>';
+    }
+    const href = /^https?:\/\//i.test(b.builder_url) ? b.builder_url : "https://" + b.builder_url;
+    return `<div class="built-by">Built by: <a class="url" href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(b.builder_name)}</a></div>`;
   }
 
   function pill(cat) {
@@ -382,6 +393,19 @@
   function renderTop10() {
     const brief = state.top10.brief_md || "";
     $("#top10-brief").textContent = extractTldr(brief);
+    const sumEl = $("#top10-builders-summary");
+    if (sumEl && state.builders) {
+      const attributed = Object.values(state.builders.rows || {}).filter((x) => x.builder_name);
+      sumEl.innerHTML = attributed.length
+        ? `Verified studio credits on ${attributed.length}/10 peers: ` +
+          attributed
+            .map((x) => {
+              const href = /^https?:\/\//i.test(x.builder_url) ? x.builder_url : "https://" + x.builder_url;
+              return `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(x.builder_name)}</a>`;
+            })
+            .join(" · ")
+        : "No public studio credits found on Top10 peers.";
+    }
 
     const rows = (state.top10.rows || []).slice().sort((a, b) => Number(a.rank) - Number(b.rank));
     $("#top10-grid").innerHTML = rows
@@ -402,6 +426,7 @@
           <div class="rank">Rank #${esc(r.rank)}</div>
           <h3>${esc(r.business_name)}</h3>
           <div class="meta-line">${esc(r.city || "—")} · ${esc(r.license_number)} · ${urlCell(r.website_url)}</div>
+          ${builderCell(r.license_number)}
           <div class="tags">
             <span class="tag">${esc(r.primary_reason_code || "—")}</span>
             ${secondary}${newTag}${stage3}
@@ -451,13 +476,15 @@
   async function boot() {
     const bootEl = $("#boot");
     try {
-      const [scored, top10, context] = await Promise.all([
+      const [scored, top10, builders, context] = await Promise.all([
         loadJson("./data/scored.json"),
         loadJson("./data/top10.json"),
+        loadJson("./data/site-builders.json"),
         loadJson("./data/context.json"),
       ]);
       state.scored = scored;
       state.top10 = top10;
+      state.builders = builders;
       state.context = context;
 
       renderOverview();
