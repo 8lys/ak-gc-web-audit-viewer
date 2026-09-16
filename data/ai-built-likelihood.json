@@ -1,19 +1,35 @@
 {
   "source_csv": "/workspace/rainmaker/ak-gc/top10/top10.csv",
   "site_builders_source": "/workspace/rainmaker/ak-gc/top10/site-builders.json",
-  "researched_at": "2026-09-15 22:29 AKDT",
-  "method": "Public homepage HTML fetch + on-page credit/generator/CDN fingerprint scan; agency destination pages checked when credited. No invented credits. WordPress/Elementor alone not scored as AI-built. Score = likelihood of AI website builders / heavy AI-assisted design-dev / heavily AI-generated content+layout.",
+  "researched_at": "2026-09-16 00:08 AKDT",
+  "method": {
+    "note": "Board correction 2026-09-16: prior single score overweighted absence of Lovable/Durable-class AI website factories and presence of custom agency footers. That answered “AI website factory?” NOT “was a ton of AI used to design/write/build?” Dual scores now LOCKED.",
+    "primary": "ai_assist_likelihood — likelihood AI meaningfully assisted copy, IA, section patterns, or design system (including human+Cursor/Claude workflows). Positive smells: eyebrow/kicker labels, formulaic benefit grids, over-clean SaaS GC cadence, generic trust bars, homogeneous CTAs, interchangeable FAQs, stock hero vs local proof elsewhere. Negative: idiosyncratic voice, messy human specificity, franchise CMS with zero AI-era patterns.",
+    "secondary": "ai_factory_likelihood — likelihood this is Durable/Lovable/10Web/Hostinger-AI/etc product output. Prior fingerprint logic retained. Usually low when custom agency credited.",
+    "alias": "ai_likelihood and band remain as aliases of ai_assist_likelihood / ai_assist_band for viewer backward compatibility.",
+    "sources": "Public homepage HTML fetch only; credited studio destinations when present. No invented credits. WordPress/Elementor alone ≠ AI factory."
+  },
   "band_legend": {
     "low": "0-33",
     "mid": "34-66",
     "high": "67-100"
   },
   "summary": {
-    "high_count": 0,
-    "mid_count": 2,
-    "low_count": 8,
+    "primary_score": "ai_assist_likelihood",
+    "high_count": 3,
+    "mid_count": 5,
+    "low_count": 2,
     "explicit_ai_builder_fingerprints_found": 0,
-    "note": "No Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI generator fingerprints observed on any Top10 peer."
+    "note": "Board correction 2026-09-16: primary score is ai_assist_likelihood (LLM craft smells), not AI website-factory fingerprints. No Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI fingerprints on Top10. Highest assist peers share eyebrow/kicker IA with Far North gold."
+  },
+  "shared_design_system_observation": {
+    "sites": [
+      "182727",
+      "CONE40385",
+      "243187",
+      "143795"
+    ],
+    "signal": "Far North, Custom Carpentry, and Husband For An Hour use class=eyebrow kickers; Deck Masters uses equivalent Tailwind uppercase tracking kickers and shares Proof, not promises with Custom Carpentry. Treated as AI-era design-system craft (high assist), not Durable/Lovable factory fingerprints."
   },
   "attributed_studios": [
     {
@@ -21,99 +37,120 @@
       "url": "https://xadastudio.com",
       "license_number": "244839",
       "business_name": "Golden Hammer LLC",
-      "ai_likelihood_of_client_site": 22,
-      "notes": "Footer credits Website design & development / Built & maintained by XaDa Studio. Studio site lists custom design/dev plus separate AI-Powered Product Development; Golden Hammer itself is custom Next.js with local project photos, not an AI-builder shell."
+      "ai_assist_likelihood_of_client_site": 63,
+      "ai_factory_likelihood_of_client_site": 14,
+      "notes": "Footer credits XaDa. Custom Next.js with local photos. Uppercase section kickers raise assist; not an AI-builder export. XaDa lists AI-Powered Product Development separately."
     },
     {
       "studio": "COTW (Connor on the Web)",
       "url": "https://connorontheweb.com",
       "license_number": "207798",
       "business_name": "Bigfoot Decking & Services",
-      "ai_likelihood_of_client_site": 15,
-      "notes": "Footer Apps and websites by COTW \u2192 connorontheweb.com. Developer portfolio/custom-app positioning; no AI website-builder product marketing observed."
+      "ai_assist_likelihood_of_client_site": 54,
+      "ai_factory_likelihood_of_client_site": 10,
+      "notes": "Footer Apps and websites by COTW. Developer-built; formulaic benefit/service grids drive mid assist, not factory."
     },
     {
       "studio": "Scorpion",
       "url": "https://www.scorpion.co/",
       "license_number": "150073",
       "business_name": "ALL AMERICAN HOME SERVICE, LLC",
-      "ai_likelihood_of_client_site": 25,
-      "notes": "ScorpionFooterS3 / scorpion.co wordmark. Agency marketing platform with formulaic local-service layout; Scorpion markets AI for ads/chat/lead scoring, not as an AI website-builder product for this site."
+      "ai_assist_likelihood_of_client_site": 36,
+      "ai_factory_likelihood_of_client_site": 12,
+      "notes": "Scorpion marketing platform. Human agency template factory; mild assist from local-service copy sameness only."
     },
     {
       "studio": "Galloway Designs",
       "url": "https://gallowaydesigns.us/",
       "license_number": "CONS40449",
       "business_name": "ARCTIC VALLEY CONSTRUCTION",
-      "ai_likelihood_of_client_site": 40,
-      "notes": "Footer Powered by Galloway Designs. Destination is an Alaska architectural design/drafting firm (not an AI site factory). Client homepage is thin (~1.5k visible chars) with generic homebuilder cadence \u2014 mid uncertainty on AI-assisted copy."
+      "ai_assist_likelihood_of_client_site": 58,
+      "ai_factory_likelihood_of_client_site": 15,
+      "notes": "Powered by Galloway Designs (AK architectural drafting). Thin generic brochure copy → mid assist uncertainty."
     },
     {
       "studio": "Fix8 Media",
       "url": "https://www.fix8media.com",
       "license_number": "CONG20310",
       "business_name": "SPINELL HOMES INC",
-      "ai_likelihood_of_client_site": 12,
-      "notes": "Live footer Site By widget href is https://www.fix8media.com (Duda Solutions Partner / custom Duda agency). site-builders.json listed 128 Media \u2014 that appears to be a misread of Fix8; public evidence is Fix8 Media. No AI-builder marketing observed on Fix8."
+      "ai_assist_likelihood_of_client_site": 26,
+      "ai_factory_likelihood_of_client_site": 10,
+      "notes": "Live Site By → fix8media.com (Duda partner). Corporate brand site; low assist and low factory."
+    },
+    {
+      "studio": "8LYS",
+      "url": "https://8lys.dev",
+      "license_number": "143795",
+      "business_name": "Far North Construction LLC",
+      "ai_assist_likelihood_of_client_site": 84,
+      "ai_factory_likelihood_of_client_site": 10,
+      "notes": "Gold standard. Built by 8LYS with Board-confirmed heavy AI assist. Custom stack — not Durable/Lovable factory."
     }
   ],
-  "shared_design_system_observation": {
-    "sites": [
-      "182727",
-      "CONE40385"
-    ],
-    "signal": "Both Astro sites share the H2 phrase Proof, not promises and similar editorial section patterns; no public studio credit on either. Treated as likely same human design system, not an AI factory fingerprint."
-  },
   "rows": {
     "182727": {
       "license_number": "182727",
       "business_name": "Deck Masters, LLC",
       "website_url": "https://deckmastersak.com",
-      "ai_likelihood": 18,
-      "band": "low",
-      "rationale": "Custom Astro stack with Anchorage-specific deck copy and project imagery; no AI-builder generator fingerprint. Shares Proof, not promises editorial pattern with Custom Carpentry, consistent with a human design system rather than Durable/Lovable-class output.",
+      "ai_assist_likelihood": 79,
+      "ai_assist_band": "high",
+      "ai_factory_likelihood": 12,
+      "ai_factory_band": "low",
+      "ai_likelihood": 79,
+      "band": "high",
+      "rationale": "Heavy AI-era section IA: Tailwind uppercase tracking-wider kickers above nearly every block (Services, Portfolio, FAQ, Why homeowners choose us, Our Story, Location). Shares the “Proof, not promises” editorial formula with Custom Carpentry. Homogeneous free-estimate CTAs and benefit/reason card rhythm. Custom Astro stack with local gallery — not an AI website factory — but craft smells align with LLM-assisted design systems.",
       "signals": [
-        "astro custom build (_astro assets)",
-        "no AI-builder meta/generator fingerprint",
-        "local project gallery density",
-        "Alaska-specific service copy",
-        "shared Proof, not promises pattern with CONE40385",
-        "no public agency credit"
+        "uppercase tracking section kickers throughout (Services / Portfolio / FAQ / Why homeowners choose us)",
+        "Proof, not promises shared editorial formula with CONE40385",
+        "homogeneous Get My Free Estimate / free estimate CTA stack",
+        "formulaic why-homeowners + services card grids",
+        "Astro custom build (_astro assets) — not Durable/Lovable",
+        "local Anchorage project gallery density (lowers factory, not assist)",
+        "no AI-builder generator fingerprint"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "attributed_builder": null
     },
     "243187": {
       "license_number": "243187",
       "business_name": "Husband For An Hour Handyman Pro",
       "website_url": "https://www.husbandforhour.com/",
-      "ai_likelihood": 8,
-      "band": "low",
-      "rationale": "Highly idiosyncratic brand voice (backup husband / honey-do / viral van) with custom photography and non-generic section writing. Looks hand-crafted marketing, not AI-builder or AI-slop layout.",
+      "ai_assist_likelihood": 61,
+      "ai_assist_band": "mid",
+      "ai_factory_likelihood": 8,
+      "ai_factory_band": "low",
+      "ai_likelihood": 61,
+      "band": "mid",
+      "rationale": "Same class=\"eyebrow\" kicker pattern as Far North (Hire with confidence, What we fix, The serious part, How it works, Questions) — strong AI-era IA smell. Offset downward by highly idiosyncratic brand voice (backup husband, honey-do, polar bear mascot, flat-rate Price Book) and custom van/crew photography that does not read as templated LLM filler. Not an AI factory.",
       "signals": [
-        "distinctive brand voice unlikely from AI factory templates",
-        "custom team/van/mascot imagery with specific alts",
+        "class=eyebrow kickers on most sections (Hire with confidence / What we fix / How it works / Questions)",
+        "formulaic service-category card grid (Plumbing, Electrical, Drywall…)",
+        "idiosyncratic brand voice (backup husband / honey-do / Price Book) — lowers assist",
+        "custom mascot/van/crew photography with specific alts",
         "no AI-builder fingerprint",
-        "no public agency credit",
-        "original FAQ/CTA phrasing"
+        "no public agency credit"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "attributed_builder": null
     },
     "244839": {
       "license_number": "244839",
       "business_name": "Golden Hammer LLC",
       "website_url": "https://www.goldenhammeralaska.com/",
-      "ai_likelihood": 22,
-      "band": "low",
-      "rationale": "Explicitly Built & maintained by XaDa Studio on a custom Next.js site with owner/project photos and Fairbanks-specific copy. XaDa markets AI-powered product work separately, but this peer site reads as studio-built, not an AI website-builder export.",
+      "ai_assist_likelihood": 63,
+      "ai_assist_band": "mid",
+      "ai_factory_likelihood": 14,
+      "ai_factory_band": "low",
+      "ai_likelihood": 63,
+      "band": "mid",
+      "rationale": "Studio-built Next.js (XaDa) with repeated uppercase section kickers (What We Do, Our Work, Why Golden Hammer, Behind the Build, Ready to Build?) and a formulaic services + why-us card stack. Local owner/project photos and Fairbanks climate copy keep factory low; section cadence and kickers still read as modern AI-assisted design-system craft. XaDa separately markets AI-powered product work (mild assist support).",
       "signals": [
-        "footer credit XaDa Studio (high confidence)",
-        "Next.js /_next image pipeline",
-        "local before/after and owner photography",
-        "Alaska climate-specific messaging",
-        "XaDa lists AI-Powered Product Development (raises mild assist uncertainty only)",
-        "no Lovable/Durable/etc fingerprint"
+        "uppercase section kickers (What We Do / Our Work / Why Golden Hammer / Ready to Build?)",
+        "formulaic service cards + Why Choose benefit grid",
+        "footer credit XaDa Studio (custom studio, not AI factory)",
+        "Next.js /_next image pipeline with local before/after photos",
+        "XaDa lists AI-Powered Product Development (assist uncertainty)",
+        "no Lovable/Durable fingerprint"
       ],
       "confidence": "high",
       "attributed_builder": {
@@ -125,17 +162,23 @@
       "license_number": "207798",
       "business_name": "Bigfoot Decking & Services",
       "website_url": "https://bigfootbuildersak.com",
-      "ai_likelihood": 15,
-      "band": "low",
-      "rationale": "Footer credits Apps and websites by COTW (Connor on the Web). Custom deck site with interactive Trex visualizer and local service framing \u2014 developer-built, not AI-builder.",
+      "ai_assist_likelihood": 54,
+      "ai_assist_band": "mid",
+      "ai_factory_likelihood": 10,
+      "ai_factory_band": "low",
+      "ai_likelihood": 54,
+      "band": "mid",
+      "rationale": "Classic AI-era local-service layout without literal eyebrow classes: 3-up trust cards (Licensed & Insured / 5 Star / Quality Materials), 6 identical service-card structures, interchangeable Alaska deck FAQ phrasing, and generic marketing cadence. COTW developer credit + Trex visualizer keep ai_factory low; assist sits mid on pattern sameness.",
       "signals": [
-        "footer credit COTW \u2192 connorontheweb.com",
-        "custom Trex color visualizer feature",
-        "no AI-builder fingerprint",
-        "some generic marketing phrases (dream decks / transform)",
-        "COTW positions as full-stack human developer"
+        "3-up benefit cards (Licensed & Insured / 5 Star / Quality Materials)",
+        "homogeneous 6-card services grid (identical structure)",
+        "interchangeable FAQ (licensed? free estimates? best material?)",
+        "Why Choose Bigfoot / Our Deck Building Services section rhythm",
+        "footer Apps and websites by COTW → connorontheweb.com",
+        "custom Trex color visualizer (human/dev craft)",
+        "no AI-builder fingerprint"
       ],
-      "confidence": "high",
+      "confidence": "medium",
       "attributed_builder": {
         "name": "COTW",
         "url": "https://connorontheweb.com"
@@ -145,16 +188,21 @@
       "license_number": "120211",
       "business_name": "MKD's Property Solutions, LLC",
       "website_url": "https://mkdspropertysolutions.com",
-      "ai_likelihood": 48,
-      "band": "mid",
-      "rationale": "WordPress + Elementor with homogeneous local-SEO copy cadence and repetitive Anchorage contractor image alts; feels template + AI-or-SEO-assisted content, but no explicit AI-builder fingerprint \u2014 WP/Elementor alone is not scored as AI-built.",
+      "ai_assist_likelihood": 74,
+      "ai_assist_band": "high",
+      "ai_factory_likelihood": 22,
+      "ai_factory_band": "low",
+      "ai_likelihood": 74,
+      "band": "high",
+      "rationale": "WordPress + Elementor with homogeneous local-SEO H1/H2 cadence (Reliable General Contractor in Anchorage), Why Choose + services stack, repetitive contractor image alts, and Let’s work together CTA phrasing. Strong AI/SEO-assisted copy+layout smell. WP/Elementor alone is not an AI website-builder product, so factory stays low-mid rather than high.",
       "signals": [
-        "generator: WordPress + Elementor (not treated as AI by itself)",
-        "homogeneous SEO H1/H2 cadence (Reliable General Contractor in Anchorage)",
-        "repetitive SEO image alts",
-        "standard Elementor services/testimonial/CTA stack",
-        "no public agency credit",
-        "no Lovable/Durable/10Web/Hostinger AI fingerprint"
+        "homogeneous SEO heading cadence (Reliable General Contractor in Anchorage)",
+        "Why Choose MKD’s Property Solutions formula section",
+        "repetitive Anchorage contractor image alts",
+        "standard Elementor services / testimonials / CTA stack",
+        "Let’s work together / Request a Free Estimate CTAs",
+        "generator: WordPress + Elementor (not treated as AI factory by itself)",
+        "no Lovable/Durable/10Web fingerprint"
       ],
       "confidence": "medium",
       "attributed_builder": null
@@ -163,14 +211,18 @@
       "license_number": "150073",
       "business_name": "ALL AMERICAN HOME SERVICE, LLC",
       "website_url": "https://www.allamericanph.com/",
-      "ai_likelihood": 25,
-      "band": "low",
-      "rationale": "Clear Scorpion marketing-platform footer/credit. Formulaic local plumbing/heating agency template, not an AI website builder; Scorpion\u2019s AI claims observed are ads/chat/scoring, not site generation.",
+      "ai_assist_likelihood": 36,
+      "ai_assist_band": "mid",
+      "ai_factory_likelihood": 12,
+      "ai_factory_band": "low",
+      "ai_likelihood": 36,
+      "band": "mid",
+      "rationale": "Clear Scorpion marketing-platform template (human agency factory). Formulaic local plumbing/heating section inventory without modern eyebrow/kicker design-system craft. Mild mid-low assist from interchangeable local-service copy patterns; Scorpion’s AI claims observed elsewhere are ads/chat/scoring, not site generation for this page.",
       "signals": [
         "ScorpionFooterS3 / scorpion.co wordmark",
-        "analytics.scorpion.co",
-        "agency template sameness (human agency factory)",
-        "Scorpion markets AI ads/chat/lead tools (not AI site builder for this page)",
+        "agency local-service mega-nav + coupon/CTA pack (human agency factory)",
+        "few AI-era eyebrow/kicker smells vs Far North-class peers",
+        "Book Appointment / Contact us today homogeneous CTAs",
         "no Lovable/Durable fingerprint"
       ],
       "confidence": "high",
@@ -183,33 +235,41 @@
       "license_number": "CONE40385",
       "business_name": "CUSTOM CARPENTRY",
       "website_url": "https://customcarpentryak.com",
-      "ai_likelihood": 20,
-      "band": "low",
-      "rationale": "Astro editorial site with Eagle River doors/windows/kitchen proof photos and the same Proof, not promises section label as Deck Masters. Reads as shared human design system, not AI-builder output.",
+      "ai_assist_likelihood": 81,
+      "ai_assist_band": "high",
+      "ai_factory_likelihood": 12,
+      "ai_factory_band": "low",
+      "ai_likelihood": 81,
+      "band": "high",
+      "rationale": "Near-identical class=\"eyebrow\" design system to Far North: Recent work, What we do, Since 1991, How it works, FAQ, Get started paired with display H2s. Shares Proof, not promises with Deck Masters. Formulaic 4-step How it works cards (Call → Free site visit → Quote → Deposit). Local install photos keep factory low; assist is high on IA/craft smells.",
       "signals": [
-        "astro custom build",
-        "shared Proof, not promises with Deck Masters",
-        "local install/remodel photo set",
-        "no AI-builder fingerprint",
-        "no public agency credit",
-        "concise non-slop service copy"
+        "class=eyebrow kickers (Recent work / What we do / How it works / FAQ / Get started)",
+        "Proof, not promises shared with Deck Masters",
+        "formulaic How it works process cards",
+        "Request a quote / Free estimates homogeneous CTAs",
+        "Astro custom build with local remodel photos",
+        "no AI-builder fingerprint / no public agency credit"
       ],
-      "confidence": "medium",
+      "confidence": "high",
       "attributed_builder": null
     },
     "CONS40449": {
       "license_number": "CONS40449",
       "business_name": "ARCTIC VALLEY CONSTRUCTION",
       "website_url": "https://www.arcticvalleyconstruction.com/",
-      "ai_likelihood": 40,
+      "ai_assist_likelihood": 58,
+      "ai_assist_band": "mid",
+      "ai_factory_likelihood": 15,
+      "ai_factory_band": "low",
+      "ai_likelihood": 58,
       "band": "mid",
-      "rationale": "Powered by Galloway Designs (Alaska architectural firm) lowers pure AI-factory odds, but the homepage is thin and uses generic inspirational homebuilder cadence \u2014 plausible light AI-assisted copy on a simple brochure layout.",
+      "rationale": "Thin homepage with generic inspirational homebuilder cadence (places people truly belong) and a hero__eyebrow location line. Over-clean but sparse section rhythm; Powered by Galloway Designs (architectural drafting firm) lowers factory odds. Plausible AI-assisted brochure copy on a simple custom layout → mid assist.",
       "signals": [
-        "footer Powered by Galloway Designs",
-        "thin visible homepage copy (~1.5k chars)",
-        "generic belong / trusted custom home builder phrasing",
+        "hero__eyebrow location kicker (Wasilla, Alaska • Est. 2017)",
+        "thin generic belong / trusted custom home builder phrasing",
         "simple hero/about/projects/gallery section stack",
-        "Galloway destination is drafting/design firm, not AI website builder",
+        "footer Powered by Galloway Designs",
+        "Galloway = drafting/design firm, not AI website builder",
         "no AI-builder fingerprint"
       ],
       "confidence": "medium",
@@ -222,35 +282,42 @@
       "license_number": "CONG20310",
       "business_name": "SPINELL HOMES INC",
       "website_url": "https://www.spinellhomes.com/",
-      "ai_likelihood": 12,
+      "ai_assist_likelihood": 26,
+      "ai_assist_band": "low",
+      "ai_factory_likelihood": 10,
+      "ai_factory_band": "low",
+      "ai_likelihood": 26,
       "band": "low",
-      "rationale": "Duda platform markers (cdn-website.com, dm* classes) plus live Site By link to Fix8 Media, a human Duda agency. Corporate Spinell brand content \u2014 agency/platform-built, not AI-builder.",
+      "rationale": "Corporate Duda site with Fix8 Media agency credit and brand-specific Get Spoiled by Spinell messaging. Production-homebuilder corp patterns more than LLM section-eyebrow craft. Low assist; low factory.",
       "signals": [
         "Duda CDN/classes (irp.cdn-website.com, dmBody/dmRoot)",
-        "footer Site By \u2192 https://www.fix8media.com",
-        "Fix8 Media = Duda Solutions Partner (human agency)",
+        "footer Site By → https://www.fix8media.com",
         "brand-specific Get Spoiled by Spinell messaging",
-        "no AI-builder fingerprint",
-        "site-builders.json 128 Media label conflicts with live fix8media.com href"
+        "few AI-era eyebrow/kicker smells",
+        "no AI-builder fingerprint"
       ],
       "confidence": "high",
       "attributed_builder": {
         "name": "Fix8 Media",
         "url": "https://www.fix8media.com",
-        "note": "Live public credit; differs from site-builders.json 128 Media"
+        "note": "Live public credit; differs from older site-builders.json 128 Media label"
       }
     },
     "CONE39417": {
       "license_number": "CONE39417",
       "business_name": "FLORCRAFT CARPET ONE",
       "website_url": "http://www.florcraftcarpetone.com/",
-      "ai_likelihood": 10,
+      "ai_assist_likelihood": 16,
+      "ai_assist_band": "low",
+      "ai_factory_likelihood": 6,
+      "ai_factory_band": "low",
+      "ai_likelihood": 16,
       "band": "low",
-      "rationale": "Carpet One Floor & Home franchise storefront paths (/root/client/CPTONE9999/) and corporate franchise UI patterns. Franchise CMS template, not AI-built.",
+      "rationale": "Carpet One franchise CMS storefront (CPTONE9999 paths) with corporate franchise brochure UI. Zero modern AI-era eyebrow/design-system patterns — franchise template, not LLM craft or AI factory.",
       "signals": [
         "Carpet One franchise client asset paths (CPTONE9999)",
-        "copyright Carpet One Floor & Home framing",
         "corporate franchise section patterns (HERE TO WOW YOU)",
+        "no AI-era eyebrow/kicker design system",
         "no third-party design credit",
         "no AI-builder fingerprint"
       ],
@@ -264,28 +331,33 @@
     "website_url": "https://farnorthgc.com",
     "license_number": "143795",
     "role": "gold_standard",
-    "ai_likelihood": 12,
-    "band": "low",
-    "rationale": "Footer credits Built by / Site by 8LYS (https://8lys.dev) on a custom Vercel + TanStack Router SSR build with Vite-hashed assets \u2014 no Lovable/Durable/Hostinger-AI/etc fingerprint. Homepage and key pages show Anchorage-neighborhood case studies, interactive before/afters, and operational copy (written finish dates, concealed-damage protocol, Kevin Ambro owner bio) that read as studio/human craft, not AI-factory layout or slop cadence. 8lys.dev brands as an AI Software Company, adding mild assist uncertainty only; public studio pages do not market an AI website-builder product for this GC site.",
+    "board_ground_truth": "Heavy AI assistance by 8LYS (Cursor/Claude-class workflow). Prior score of 12/low measured AI-factory absence, not AI assist — corrected.",
+    "ai_assist_likelihood": 84,
+    "ai_assist_band": "high",
+    "ai_factory_likelihood": 10,
+    "ai_factory_band": "low",
+    "ai_likelihood": 84,
+    "band": "high",
+    "rationale": "Board gold: site was built with heavy AI assistance by 8LYS. Live HTML confirms explicit AI craft smells — repeated <p class=\"eyebrow\"> kickers above display headings (Credentials, The work, Investors, Why Far North, FAQ) plus footer column eyebrows (Navigate, Company, Contact). Over-clean section-head + display H2 rhythm, trust-band credentials strip, and homogeneous Request a quote CTAs match startup-SaaS GC cadence. Local case studies and Kevin Ambro bio are real but do not cancel the IA/design-system smell. Custom Vercel + TanStack + 8LYS credit → ai_factory stays low.",
     "signals": [
-      "footer Built by / Site by 8LYS \u2192 https://8lys.dev (live href + 8lys-mark-white.svg)",
-      "no Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI generator fingerprint",
-      "Vercel hosting headers (server: Vercel, x-vercel-*)",
-      "TanStack Router SSR markers ($_TSR, tsr-scroll-restoration)",
-      "Vite-hashed /assets/* custom JS/CSS bundles",
-      "neighborhood-specific before/after case studies (Turnagain, Eagle River, University Area, Spenard)",
-      "interactive before/after compare UI",
-      "non-generic operational copy (written scope/finish date, commute charge, winter work, BRRRR)",
-      "named owner bio on /about (Kevin Ambro)",
-      "8lys.dev titles AI Software Company (mild assist uncertainty only; not observed AI site-builder product)"
+      "EYEBROW SMELL (Board-weighted): class=eyebrow texts Credentials / The work / Investors / Why Far North / FAQ",
+      "footer column eyebrows Navigate / Company / Contact",
+      "section-head + display H2 over-clean SaaS GC cadence",
+      "trust-band Credentials lede pattern",
+      "homogeneous Request a quote CTAs",
+      "footer Built by / Site by 8LYS → https://8lys.dev",
+      "no Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI fingerprint",
+      "Vercel + TanStack Router SSR + Vite-hashed /assets (custom stack → low factory)",
+      "neighborhood case studies + interactive before/after (local density; does not erase assist smells)",
+      "8lys.dev brands AI Software Company (consistent with heavy AI assist workflow)"
     ],
     "confidence": "high",
     "attributed_builder": {
       "name": "8LYS",
       "url": "https://8lys.dev"
     },
-    "comparison_note": "Sits in the Top10 low band with Spinell (12) and Florcraft (10), below Golden Hammer (22) / All American (25) and well below mid peers Arctic Valley (40) and MKD (48). Craft and local originality track closer to Husband For An Hour (8) than to SEO-template peers; explicit 8LYS credit plus 8lys \u201cAI Software Company\u201d branding keeps score a few points above the absolute floor rather than mid.",
-    "researched_at": "2026-09-15 23:59 AKDT",
+    "comparison_note": "Under dual-score model, Far North is HIGH on ai_assist_likelihood (primary) and LOW on ai_factory_likelihood. Closest Top10 peers on assist craft: Custom Carpentry (81), Deck Masters (79), MKD (74) — all share eyebrow/kicker or SEO-homogeneous AI-era patterns. Prior single score of 12 incorrectly rewarded custom agency stack.",
+    "researched_at": "2026-09-16 00:08 AKDT",
     "appraisal_paths": [
       "/workspace/rainmaker/ak-gc/appraisals/farnorthgc-ai-built-likelihood.md",
       "/workspace/rainmaker/ak-gc/appraisals/farnorthgc-ai-built-likelihood.json"

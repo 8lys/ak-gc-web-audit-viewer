@@ -51,14 +51,16 @@
 
   function aiScoreCell(license) {
     const a = (state.aiScores && state.aiScores.rows && state.aiScores.rows[license]) || null;
-    if (!a || a.ai_likelihood == null) {
-      return '<div class="ai-score muted">AI-built likelihood: n/a</div>';
-    }
-    const n = Number(a.ai_likelihood);
-    const band = esc(a.band || '');
-    const conf = esc(a.confidence || '');
+    if (!a) return '<div class="ai-score muted">AI-assist likelihood: n/a</div>';
+    const n = Number(a.ai_assist_likelihood != null ? a.ai_assist_likelihood : a.ai_likelihood);
+    if (Number.isNaN(n)) return '<div class="ai-score muted">AI-assist likelihood: n/a</div>';
+    const band = esc(a.ai_assist_band || a.band || '');
+    const factory = a.ai_factory_likelihood != null ? Number(a.ai_factory_likelihood) : null;
     const tip = esc(a.rationale || '');
-    return `<div class="ai-score band-${band}" title="${tip}"><span class="ai-label">AI-built likelihood</span> <strong>${n}</strong><span class="ai-band">/100 · ${band}</span>${conf ? `<span class="ai-conf"> · conf ${conf}</span>` : ''}</div>`;
+    const factoryBit = factory != null
+      ? `<span class="ai-factory"> · factory ${factory}/100</span>`
+      : '';
+    return `<div class="ai-score band-${band}" title="${tip}"><span class="ai-label">AI-assist</span> <strong>${n}</strong><span class="ai-band">/100 · ${band}</span>${factoryBit}</div>`;
   }
 
   function builderCell(license) {
@@ -423,7 +425,8 @@
     const aiSum = $("#top10-ai-summary");
     if (aiSum && state.aiScores && state.aiScores.summary) {
       const s = state.aiScores.summary;
-      aiSum.textContent = `AI-built likelihood (estimate): high ${s.high_count || 0} · mid ${s.mid_count || 0} · low ${s.low_count || 0}. Hover a score for rationale.`;
+      const assist = state.aiScores.summary_assist || s;
+      aiSum.textContent = `AI-assist (primary): high ${assist.high_count || 0} · mid ${assist.mid_count || 0} · low ${assist.low_count || 0}. Factory score shown beside each card. Hover for rationale.`;
     }
 
     const rows = (state.top10.rows || []).slice().sort((a, b) => Number(a.rank) - Number(b.rank));
@@ -463,15 +466,18 @@
     const md = (state.context && state.context.gold_standard_md) || "";
     const goldAi = state.aiScores && state.aiScores.gold_standard;
     let banner = "";
-    if (goldAi && goldAi.ai_likelihood != null) {
-      const n = Number(goldAi.ai_likelihood);
-      const band = esc(goldAi.band || "");
-      const conf = esc(goldAi.confidence || "");
+    if (goldAi) {
+      const n = Number(goldAi.ai_assist_likelihood != null ? goldAi.ai_assist_likelihood : goldAi.ai_likelihood);
+      const band = esc(goldAi.ai_assist_band || goldAi.band || "");
+      const factory = goldAi.ai_factory_likelihood != null ? Number(goldAi.ai_factory_likelihood) : null;
       const tip = esc(goldAi.rationale || "");
       const built = goldAi.attributed_builder && goldAi.attributed_builder.name
         ? ` · Built by <a href="${esc(goldAi.attributed_builder.url || "#")}" target="_blank" rel="noopener noreferrer">${esc(goldAi.attributed_builder.name)}</a>`
         : "";
-      banner = `<div class="ai-score band-${band} gold-ai" title="${tip}"><span class="ai-label">AI-built likelihood (Far North)</span> <strong>${n}</strong><span class="ai-band">/100 · ${band}</span>${conf ? `<span class="ai-conf"> · conf ${conf}</span>` : ""}${built}</div>`;
+      const factoryBit = factory != null ? `<span class="ai-factory"> · factory ${factory}/100</span>` : "";
+      if (!Number.isNaN(n)) {
+        banner = `<div class="ai-score band-${band} gold-ai" title="${tip}"><span class="ai-label">AI-assist (Far North)</span> <strong>${n}</strong><span class="ai-band">/100 · ${band}</span>${factoryBit}${built}</div>`;
+      }
     }
     $("#gold-body").innerHTML = banner + renderMd(md);
   }
