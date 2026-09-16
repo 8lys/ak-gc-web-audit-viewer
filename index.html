@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AK GC Web Audit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="site-header">
+      <div class="brand">
+        <h1>AK GC Web Audit</h1>
+        <p class="tagline">
+          Site Scout vs gold standard
+          <a href="https://farnorthgc.com" target="_blank" rel="noopener noreferrer">Far North GC</a>
+        </p>
+      </div>
+      <div class="header-notes">
+        <span class="badge gold">Gold: farnorthgc.com</span>
+        <span class="badge warn-note">Card ≠ GO · no outreach until Board asks</span>
+      </div>
+    </header>
+
+    <nav class="nav" id="nav" aria-label="Sections">
+      <button type="button" data-route="overview" class="active">Overview</button>
+      <button type="button" data-route="browse">Browse</button>
+      <button type="button" data-route="could">Could benefit</button>
+      <button type="button" data-route="wnb">Would not benefit</button>
+      <button type="button" data-route="top10">Top 10 peers</button>
+      <button type="button" data-route="gold">Gold standard</button>
+    </nav>
+
+    <div id="boot" class="state-msg">Loading audit data…</div>
+
+    <main id="main" hidden>
+      <!-- Overview -->
+      <section class="panel active" id="panel-overview" data-panel="overview">
+        <div class="panel-head">
+          <h2>Overview</h2>
+          <span class="sub" id="overview-updated"></span>
+        </div>
+        <div class="stats" id="overview-stats"></div>
+        <div class="overview-grid">
+          <div class="card">
+            <h3>Category mix</h3>
+            <div class="bar-list" id="cat-bars"></div>
+          </div>
+          <div class="card">
+            <h3>License status</h3>
+            <div class="bar-list" id="status-bars"></div>
+            <p class="blurb" style="margin-top:1rem" id="summary-blurb"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Browse -->
+      <section class="panel" id="panel-browse" data-panel="browse">
+        <div class="panel-head">
+          <h2>Browse scored roster</h2>
+          <span class="sub">Search, filter, sort · all categories</span>
+        </div>
+        <div class="filters" id="browse-filters">
+          <input type="search" id="q" placeholder="Search name, license, city, DBA…" autocomplete="off" />
+          <select id="f-category" aria-label="Category">
+            <option value="">All categories</option>
+            <option value="no_website">no_website</option>
+            <option value="could_benefit">could_benefit</option>
+            <option value="would_not_benefit">would_not_benefit</option>
+          </select>
+          <select id="f-status" aria-label="Status">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Suspended">Suspended</option>
+          </select>
+          <select id="f-web" aria-label="Website">
+            <option value="">Website: any</option>
+            <option value="yes">Has website</option>
+            <option value="no">No website</option>
+          </select>
+          <span class="meta" id="browse-meta"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="data" id="browse-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="pager" id="browse-pager"></div>
+      </section>
+
+      <!-- Could benefit -->
+      <section class="panel" id="panel-could" data-panel="could">
+        <div class="panel-head">
+          <h2>Could benefit</h2>
+          <span class="sub" id="could-sub"></span>
+        </div>
+        <div class="filters">
+          <input type="search" id="could-q" placeholder="Search name, license, city…" autocomplete="off" />
+          <select id="could-status" aria-label="Status">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Suspended">Suspended</option>
+          </select>
+          <span class="meta" id="could-meta"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="data" id="could-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="pager" id="could-pager"></div>
+      </section>
+
+      <!-- Would not benefit -->
+      <section class="panel" id="panel-wnb" data-panel="wnb">
+        <div class="panel-head">
+          <h2>Would not benefit</h2>
+          <span class="sub" id="wnb-sub"></span>
+        </div>
+        <div class="filters">
+          <input type="search" id="wnb-q" placeholder="Search name, license, city, reason…" autocomplete="off" />
+          <select id="wnb-status" aria-label="Status">
+            <option value="">All statuses</option>
+            <option value="Active">Active</option>
+            <option value="Suspended">Suspended</option>
+          </select>
+          <span class="meta" id="wnb-meta"></span>
+        </div>
+        <div class="table-wrap">
+          <table class="data" id="wnb-table">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="pager" id="wnb-pager"></div>
+      </section>
+
+      <!-- Top 10 -->
+      <section class="panel" id="panel-top10" data-panel="top10">
+        <div class="panel-head">
+          <h2>Top 10 peers</h2>
+          <span class="sub">Would-not-benefit sample closest to Far North craft</span>
+        </div>
+        <div class="brief-box">
+          <h3 style="margin:0 0 0.5rem;font-size:0.95rem">Brief TLDR</h3>
+          <p class="tldr" id="top10-brief"></p>
+        </div>
+        <div class="peer-grid" id="top10-grid"></div>
+      </section>
+
+      <!-- Gold -->
+      <section class="panel" id="panel-gold" data-panel="gold">
+        <div class="panel-head">
+          <h2>Gold standard</h2>
+          <span class="sub"><a href="https://farnorthgc.com" target="_blank" rel="noopener noreferrer">farnorthgc.com</a></span>
+        </div>
+        <article class="md-body" id="gold-body"></article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>AK GC Web Audit · local viewer · data from scored CSV</span>
+      <span>Prefer <code>python3 -m http.server</code> — file:// may block fetch</span>
+    </footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>
