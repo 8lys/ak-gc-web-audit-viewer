@@ -461,7 +461,19 @@
 
   function renderGold() {
     const md = (state.context && state.context.gold_standard_md) || "";
-    $("#gold-body").innerHTML = renderMd(md);
+    const goldAi = state.aiScores && state.aiScores.gold_standard;
+    let banner = "";
+    if (goldAi && goldAi.ai_likelihood != null) {
+      const n = Number(goldAi.ai_likelihood);
+      const band = esc(goldAi.band || "");
+      const conf = esc(goldAi.confidence || "");
+      const tip = esc(goldAi.rationale || "");
+      const built = goldAi.attributed_builder && goldAi.attributed_builder.name
+        ? ` · Built by <a href="${esc(goldAi.attributed_builder.url || "#")}" target="_blank" rel="noopener noreferrer">${esc(goldAi.attributed_builder.name)}</a>`
+        : "";
+      banner = `<div class="ai-score band-${band} gold-ai" title="${tip}"><span class="ai-label">AI-built likelihood (Far North)</span> <strong>${n}</strong><span class="ai-band">/100 · ${band}</span>${conf ? `<span class="ai-conf"> · conf ${conf}</span>` : ""}${built}</div>`;
+    }
+    $("#gold-body").innerHTML = banner + renderMd(md);
   }
 
   /* --- Wire filters --- */

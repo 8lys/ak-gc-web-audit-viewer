@@ -30,7 +30,7 @@
       "license_number": "207798",
       "business_name": "Bigfoot Decking & Services",
       "ai_likelihood_of_client_site": 15,
-      "notes": "Footer Apps and websites by COTW → connorontheweb.com. Developer portfolio/custom-app positioning; no AI website-builder product marketing observed."
+      "notes": "Footer Apps and websites by COTW \u2192 connorontheweb.com. Developer portfolio/custom-app positioning; no AI website-builder product marketing observed."
     },
     {
       "studio": "Scorpion",
@@ -46,7 +46,7 @@
       "license_number": "CONS40449",
       "business_name": "ARCTIC VALLEY CONSTRUCTION",
       "ai_likelihood_of_client_site": 40,
-      "notes": "Footer Powered by Galloway Designs. Destination is an Alaska architectural design/drafting firm (not an AI site factory). Client homepage is thin (~1.5k visible chars) with generic homebuilder cadence — mid uncertainty on AI-assisted copy."
+      "notes": "Footer Powered by Galloway Designs. Destination is an Alaska architectural design/drafting firm (not an AI site factory). Client homepage is thin (~1.5k visible chars) with generic homebuilder cadence \u2014 mid uncertainty on AI-assisted copy."
     },
     {
       "studio": "Fix8 Media",
@@ -54,11 +54,14 @@
       "license_number": "CONG20310",
       "business_name": "SPINELL HOMES INC",
       "ai_likelihood_of_client_site": 12,
-      "notes": "Live footer Site By widget href is https://www.fix8media.com (Duda Solutions Partner / custom Duda agency). site-builders.json listed 128 Media — that appears to be a misread of Fix8; public evidence is Fix8 Media. No AI-builder marketing observed on Fix8."
+      "notes": "Live footer Site By widget href is https://www.fix8media.com (Duda Solutions Partner / custom Duda agency). site-builders.json listed 128 Media \u2014 that appears to be a misread of Fix8; public evidence is Fix8 Media. No AI-builder marketing observed on Fix8."
     }
   ],
   "shared_design_system_observation": {
-    "sites": ["182727", "CONE40385"],
+    "sites": [
+      "182727",
+      "CONE40385"
+    ],
     "signal": "Both Astro sites share the H2 phrase Proof, not promises and similar editorial section patterns; no public studio credit on either. Treated as likely same human design system, not an AI factory fingerprint."
   },
   "rows": {
@@ -124,9 +127,9 @@
       "website_url": "https://bigfootbuildersak.com",
       "ai_likelihood": 15,
       "band": "low",
-      "rationale": "Footer credits Apps and websites by COTW (Connor on the Web). Custom deck site with interactive Trex visualizer and local service framing — developer-built, not AI-builder.",
+      "rationale": "Footer credits Apps and websites by COTW (Connor on the Web). Custom deck site with interactive Trex visualizer and local service framing \u2014 developer-built, not AI-builder.",
       "signals": [
-        "footer credit COTW → connorontheweb.com",
+        "footer credit COTW \u2192 connorontheweb.com",
         "custom Trex color visualizer feature",
         "no AI-builder fingerprint",
         "some generic marketing phrases (dream decks / transform)",
@@ -144,7 +147,7 @@
       "website_url": "https://mkdspropertysolutions.com",
       "ai_likelihood": 48,
       "band": "mid",
-      "rationale": "WordPress + Elementor with homogeneous local-SEO copy cadence and repetitive Anchorage contractor image alts; feels template + AI-or-SEO-assisted content, but no explicit AI-builder fingerprint — WP/Elementor alone is not scored as AI-built.",
+      "rationale": "WordPress + Elementor with homogeneous local-SEO copy cadence and repetitive Anchorage contractor image alts; feels template + AI-or-SEO-assisted content, but no explicit AI-builder fingerprint \u2014 WP/Elementor alone is not scored as AI-built.",
       "signals": [
         "generator: WordPress + Elementor (not treated as AI by itself)",
         "homogeneous SEO H1/H2 cadence (Reliable General Contractor in Anchorage)",
@@ -162,7 +165,7 @@
       "website_url": "https://www.allamericanph.com/",
       "ai_likelihood": 25,
       "band": "low",
-      "rationale": "Clear Scorpion marketing-platform footer/credit. Formulaic local plumbing/heating agency template, not an AI website builder; Scorpion’s AI claims observed are ads/chat/scoring, not site generation.",
+      "rationale": "Clear Scorpion marketing-platform footer/credit. Formulaic local plumbing/heating agency template, not an AI website builder; Scorpion\u2019s AI claims observed are ads/chat/scoring, not site generation.",
       "signals": [
         "ScorpionFooterS3 / scorpion.co wordmark",
         "analytics.scorpion.co",
@@ -200,7 +203,7 @@
       "website_url": "https://www.arcticvalleyconstruction.com/",
       "ai_likelihood": 40,
       "band": "mid",
-      "rationale": "Powered by Galloway Designs (Alaska architectural firm) lowers pure AI-factory odds, but the homepage is thin and uses generic inspirational homebuilder cadence — plausible light AI-assisted copy on a simple brochure layout.",
+      "rationale": "Powered by Galloway Designs (Alaska architectural firm) lowers pure AI-factory odds, but the homepage is thin and uses generic inspirational homebuilder cadence \u2014 plausible light AI-assisted copy on a simple brochure layout.",
       "signals": [
         "footer Powered by Galloway Designs",
         "thin visible homepage copy (~1.5k chars)",
@@ -221,10 +224,10 @@
       "website_url": "https://www.spinellhomes.com/",
       "ai_likelihood": 12,
       "band": "low",
-      "rationale": "Duda platform markers (cdn-website.com, dm* classes) plus live Site By link to Fix8 Media, a human Duda agency. Corporate Spinell brand content — agency/platform-built, not AI-builder.",
+      "rationale": "Duda platform markers (cdn-website.com, dm* classes) plus live Site By link to Fix8 Media, a human Duda agency. Corporate Spinell brand content \u2014 agency/platform-built, not AI-builder.",
       "signals": [
         "Duda CDN/classes (irp.cdn-website.com, dmBody/dmRoot)",
-        "footer Site By → https://www.fix8media.com",
+        "footer Site By \u2192 https://www.fix8media.com",
         "Fix8 Media = Duda Solutions Partner (human agency)",
         "brand-specific Get Spoiled by Spinell messaging",
         "no AI-builder fingerprint",
@@ -254,5 +257,38 @@
       "confidence": "high",
       "attributed_builder": null
     }
+  },
+  "gold_standard": {
+    "site": "farnorthgc.com",
+    "business_name": "Far North Construction LLC / Far North GC",
+    "website_url": "https://farnorthgc.com",
+    "license_number": "143795",
+    "role": "gold_standard",
+    "ai_likelihood": 12,
+    "band": "low",
+    "rationale": "Footer credits Built by / Site by 8LYS (https://8lys.dev) on a custom Vercel + TanStack Router SSR build with Vite-hashed assets \u2014 no Lovable/Durable/Hostinger-AI/etc fingerprint. Homepage and key pages show Anchorage-neighborhood case studies, interactive before/afters, and operational copy (written finish dates, concealed-damage protocol, Kevin Ambro owner bio) that read as studio/human craft, not AI-factory layout or slop cadence. 8lys.dev brands as an AI Software Company, adding mild assist uncertainty only; public studio pages do not market an AI website-builder product for this GC site.",
+    "signals": [
+      "footer Built by / Site by 8LYS \u2192 https://8lys.dev (live href + 8lys-mark-white.svg)",
+      "no Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI generator fingerprint",
+      "Vercel hosting headers (server: Vercel, x-vercel-*)",
+      "TanStack Router SSR markers ($_TSR, tsr-scroll-restoration)",
+      "Vite-hashed /assets/* custom JS/CSS bundles",
+      "neighborhood-specific before/after case studies (Turnagain, Eagle River, University Area, Spenard)",
+      "interactive before/after compare UI",
+      "non-generic operational copy (written scope/finish date, commute charge, winter work, BRRRR)",
+      "named owner bio on /about (Kevin Ambro)",
+      "8lys.dev titles AI Software Company (mild assist uncertainty only; not observed AI site-builder product)"
+    ],
+    "confidence": "high",
+    "attributed_builder": {
+      "name": "8LYS",
+      "url": "https://8lys.dev"
+    },
+    "comparison_note": "Sits in the Top10 low band with Spinell (12) and Florcraft (10), below Golden Hammer (22) / All American (25) and well below mid peers Arctic Valley (40) and MKD (48). Craft and local originality track closer to Husband For An Hour (8) than to SEO-template peers; explicit 8LYS credit plus 8lys \u201cAI Software Company\u201d branding keeps score a few points above the absolute floor rather than mid.",
+    "researched_at": "2026-09-15 23:59 AKDT",
+    "appraisal_paths": [
+      "/workspace/rainmaker/ak-gc/appraisals/farnorthgc-ai-built-likelihood.md",
+      "/workspace/rainmaker/ak-gc/appraisals/farnorthgc-ai-built-likelihood.json"
+    ]
   }
 }
