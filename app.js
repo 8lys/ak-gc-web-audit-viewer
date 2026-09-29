@@ -11,6 +11,7 @@
     builders: null,
     aiScores: null,
     context: null,
+    scope: "in", // "in" = in-state only (default), "all", "out" = out-of-state/national only
     browse: { q: "", category: "", status: "", web: "", sortKey: "business_name", sortDir: 1, page: 1 },
     could: { q: "", status: "", sortKey: "business_name", sortDir: 1, page: 1 },
     wnb: { q: "", status: "", sortKey: "business_name", sortDir: 1, page: 1 },
@@ -34,6 +35,31 @@
   function pct(n, total) {
     if (!total) return "0%";
     return ((100 * n) / total).toFixed(1) + "%";
+  }
+
+  /* --- Scope (scope_flag: "" = in-state, out_of_state_hq, out_of_scope_national) --- */
+  const SCOPE_LABELS = { in: "In-state only", all: "All", out: "Out-of-state/national only" };
+  const SCOPE_BADGES = {
+    out_of_state_hq: { text: "Out-of-state HQ", cls: "oos" },
+    out_of_scope_national: { text: "National", cls: "nat" },
+  };
+
+  function inScope(row, scope) {
+    const flagged = !!(row.scope_flag && row.scope_flag.trim());
+    if (scope === "out") return flagged;
+    if (scope === "all") return true;
+    return !flagged;
+  }
+
+  function scopedRows() {
+    return state.scored.rows.filter((r) => inScope(r, state.scope));
+  }
+
+  function scopeBadge(row) {
+    const f = (row.scope_flag || "").trim();
+    if (!f) return "";
+    const b = SCOPE_BADGES[f] || { text: f, cls: "oos" };
+    return ` <span class="scope-badge ${b.cls}" title="scope_flag: ${esc(f)}">${esc(b.text)}</span>`;
   }
 
   function hasWebsite(row) {
@@ -153,21 +179,28 @@
 
   /* --- Overview --- */
   function renderOverview() {
-    const meta = state.scored.meta;
-    const cats = meta.categories || {};
-    const st = meta.status || {};
-    const total = meta.total;
+    const rows = scopedRows();
+    const cats = {};
+    let active = 0;
+    let withWeb = 0;
+    for (const r of rows) {
+      const c = r.category || "unknown";
+      cats[c] = (cats[c] || 0) + 1;
+      if (r.status === "Active") active += 1;
+      if (hasWebsite(r)) withWeb += 1;
+    }
+    const total = rows.length;
     const nw = cats.no_website || 0;
     const cb = cats.could_benefit || 0;
     const wnb = cats.would_not_benefit || 0;
-    const active = st.Active || 0;
     const otherStatus = total - active;
+    const scopeLabel = SCOPE_LABELS[state.scope] || SCOPE_LABELS.in;
 
     $("#overview-stats").innerHTML = `
       <div class="stat-card">
         <div class="label">Total licenses</div>
         <div class="value">${fmtNum(total)}</div>
-        <div class="hint">Scored roster rows</div>
+        <div class="hint">Scored roster rows · ${esc(scopeLabel)}</div>
       </div>
       <div class="stat-card nw">
         <div class="label">No website</div>
@@ -186,8 +219,8 @@
       </div>
       <div class="stat-card web">
         <div class="label">With website</div>
-        <div class="value">${fmtNum(meta.with_website)}</div>
-        <div class="hint">${meta.pct_with_website}% of roster</div>
+        <div class="value">${fmtNum(withWeb)}</div>
+        <div class="hint">${pct(withWeb, total)} of roster</div>
       </div>
       <div class="stat-card">
         <div class="label">Active licenses</div>
@@ -226,10 +259,11 @@
       .slice(0, 4)
       .map((l) => l.replace(/^-\s*/, "").trim());
     $("#summary-blurb").innerHTML = firstBullets.length
-      ? firstBullets.map((b) => `<span class="blurb">• ${esc(b)}</span>`).join("")
+      ? `<span class="blurb muted">Roster summary (all scopes):</span>` +
+        firstBullets.map((b) => `<span class="blurb">• ${esc(b)}</span>`).join("")
       : `<span class="blurb">Categories: no_website=${nw}, could_benefit=${cb}, would_not_benefit=${wnb}</span>`;
 
-    $("#overview-updated").textContent = `Categories sum ${nw + cb + wnb} · source scored CSV`;
+    $("#overview-updated").textContent = `${scopeLabel} · categories sum ${fmtNum(nw + cb + wnb)} of ${fmtNum(state.scored.rows.length)} scored · source scored CSV`;
   }
 
   /* --- Tables --- */
@@ -330,6 +364,7 @@
                   if (c.url) return `<td>${urlCell(v)}</td>`;
                   if (c.pill) return `<td>${pill(v)}</td>`;
                   if (c.mono) return `<td class="mono">${esc(v) || "—"}</td>`;
+                  if (c.key === "business_name") return `<td>${esc(v) || '<span class="muted">—</span>'}${scopeBadge(r)}</td>`;
                   return `<td>${esc(v) || '<span class="muted">—</span>'}</td>`;
                 })
                 .join("") +
@@ -374,7 +409,7 @@
   }
 
   function refreshViews() {
-    const all = state.scored.rows;
+    const all = scopedRows();
 
     const browseFiltered = sortRows(
       filterRows(all, state.browse),
@@ -483,6 +518,20 @@
   }
 
   /* --- Wire filters --- */
+  function wireScope() {
+    const el = $("#f-scope");
+    if (!el) return;
+    el.value = state.scope;
+    el.addEventListener("change", () => {
+      state.scope = SCOPE_LABELS[el.value] ? el.value : "in";
+      state.browse.page = 1;
+      state.could.page = 1;
+      state.wnb.page = 1;
+      renderOverview();
+      refreshViews();
+    });
+  }
+
   function wireFilters() {
     const bind = (id, view, key) => {
       const el = $(id);
@@ -532,6 +581,7 @@
       renderTop10();
       renderGold();
       wireFilters();
+      wireScope();
 
       $$("#nav button").forEach((b) =>
         b.addEventListener("click", () => setRoute(b.dataset.route))

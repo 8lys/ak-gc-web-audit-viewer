@@ -704,3 +704,50 @@ table.data a.url {
 }
 
 .ai-factory { opacity: 0.65; font-size: 0.8rem; }
+
+/* Scope filter (in-state / out-of-state) */
+.scope-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+}
+.scope-bar label {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.scope-bar select {
+  font: inherit;
+  color: var(--text);
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  outline: none;
+}
+.scope-bar select:focus {
+  border-color: rgba(201, 162, 39, 0.55);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+.scope-bar .muted {
+  color: var(--text-dim);
+  font-size: 0.78rem;
+}
+.scope-badge {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: rgba(91, 141, 239, 0.16);
+  color: #93b4f5;
+}
+.scope-badge.nat {
+  background: rgba(196, 92, 92, 0.15);
+  color: #e08a8a;
+}

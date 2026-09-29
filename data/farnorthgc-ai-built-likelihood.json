@@ -7,29 +7,34 @@
   ],
   "website_url": "https://farnorthgc.com",
   "license_number": "143795",
-  "ai_likelihood": 12,
-  "band": "low",
-  "rationale": "Footer credits Built by / Site by 8LYS (https://8lys.dev) on a custom Vercel + TanStack Router SSR build with Vite-hashed assets \u2014 no Lovable/Durable/Hostinger-AI/etc fingerprint. Homepage and key pages show Anchorage-neighborhood case studies, interactive before/afters, and operational copy (written finish dates, concealed-damage protocol, Kevin Ambro owner bio) that read as studio/human craft, not AI-factory layout or slop cadence. 8lys.dev brands as an AI Software Company, adding mild assist uncertainty only; public studio pages do not market an AI website-builder product for this GC site.",
+  "board_ground_truth": "Heavy AI assistance by 8LYS. Prior 12/low measured wrong thing (factory absence).",
+  "ai_assist_likelihood": 84,
+  "ai_assist_band": "high",
+  "ai_factory_likelihood": 10,
+  "ai_factory_band": "low",
+  "ai_likelihood": 84,
+  "band": "high",
+  "rationale": "Board gold: site was built with heavy AI assistance by 8LYS. Live HTML confirms explicit AI craft smells — repeated <p class=\"eyebrow\"> kickers above display headings (Credentials, The work, Investors, Why Far North, FAQ) plus footer column eyebrows (Navigate, Company, Contact). Over-clean section-head + display H2 rhythm, trust-band credentials strip, and homogeneous Request a quote CTAs match startup-SaaS GC cadence. Local case studies and Kevin Ambro bio are real but do not cancel the IA/design-system smell. Custom Vercel + TanStack + 8LYS credit → ai_factory stays low.",
   "signals": [
-    "footer Built by / Site by 8LYS \u2192 https://8lys.dev (live href + 8lys-mark-white.svg)",
-    "no Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI generator fingerprint",
-    "Vercel hosting headers (server: Vercel, x-vercel-*)",
-    "TanStack Router SSR markers ($_TSR, tsr-scroll-restoration)",
-    "Vite-hashed /assets/* custom JS/CSS bundles",
-    "neighborhood-specific before/after case studies (Turnagain, Eagle River, University Area, Spenard)",
-    "interactive before/after compare UI",
-    "non-generic operational copy (written scope/finish date, commute charge, winter work, BRRRR)",
-    "named owner bio on /about (Kevin Ambro)",
-    "8lys.dev titles AI Software Company (mild assist uncertainty only; not observed AI site-builder product)"
+    "EYEBROW SMELL (Board-weighted): class=eyebrow texts Credentials / The work / Investors / Why Far North / FAQ",
+    "footer column eyebrows Navigate / Company / Contact",
+    "section-head + display H2 over-clean SaaS GC cadence",
+    "trust-band Credentials lede pattern",
+    "homogeneous Request a quote CTAs",
+    "footer Built by / Site by 8LYS → https://8lys.dev",
+    "no Lovable/Durable/10Web/Hostinger AI/Bookmark/Framer AI fingerprint",
+    "Vercel + TanStack Router SSR + Vite-hashed /assets (custom stack → low factory)",
+    "neighborhood case studies + interactive before/after (local density; does not erase assist smells)",
+    "8lys.dev brands AI Software Company (consistent with heavy AI assist workflow)"
   ],
   "confidence": "high",
   "attributed_builder": {
     "name": "8LYS",
     "url": "https://8lys.dev"
   },
-  "comparison_note": "Sits in the Top10 low band with Spinell (12) and Florcraft (10), below Golden Hammer (22) / All American (25) and well below mid peers Arctic Valley (40) and MKD (48). Craft and local originality track closer to Husband For An Hour (8) than to SEO-template peers; explicit 8LYS credit plus 8lys \u201cAI Software Company\u201d branding keeps score a few points above the absolute floor rather than mid.",
-  "researched_at": "2026-09-15 23:59 AKDT",
-  "method": "Public homepage + key pages HTML fetch; footer/generator/CDN/framework fingerprint scan; credited studio destination checked. No repo access. No invented credits. WordPress/Elementor alone not scored as AI-built. Score = likelihood of AI website builders / heavy AI-assisted design-dev / heavily AI-generated content+layout.",
+  "comparison_note": "Under dual-score model, Far North is HIGH on ai_assist_likelihood (primary) and LOW on ai_factory_likelihood. Closest Top10 peers on assist craft: Custom Carpentry (81), Deck Masters (79), MKD (74) — all share eyebrow/kicker or SEO-homogeneous AI-era patterns. Prior single score of 12 incorrectly rewarded custom agency stack.",
+  "researched_at": "2026-09-16 00:08 AKDT",
+  "method": "Dual-score Board correction 2026-09-16. Public homepage HTML; eyebrow/kicker and craft smells weighted for ai_assist; AI-builder fingerprints for ai_factory. No repo access.",
   "band_legend": {
     "low": "0-33",
     "mid": "34-66",
@@ -37,9 +42,16 @@
   },
   "pages_inspected": [
     "https://farnorthgc.com/",
-    "https://farnorthgc.com/about",
-    "https://farnorthgc.com/contact",
-    "https://farnorthgc.com/llms.txt",
     "https://8lys.dev/"
+  ],
+  "eyebrow_inventory": [
+    "Credentials",
+    "The work",
+    "Investors",
+    "Why Far North",
+    "FAQ",
+    "Navigate",
+    "Company",
+    "Contact"
   ]
 }

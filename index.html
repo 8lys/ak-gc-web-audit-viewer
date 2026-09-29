@@ -34,6 +34,16 @@
       <button type="button" data-route="gold">Gold standard</button>
     </nav>
 
+    <div class="scope-bar" id="scope-bar">
+      <label for="f-scope">Scope</label>
+      <select id="f-scope" aria-label="Scope">
+        <option value="in" selected>In-state only</option>
+        <option value="all">All</option>
+        <option value="out">Out-of-state/national only</option>
+      </select>
+      <span class="muted">Applies to Overview, Browse, Could benefit, Would not benefit</span>
+    </div>
+
     <div id="boot" class="state-msg">Loading audit data…</div>
 
     <main id="main" hidden>
